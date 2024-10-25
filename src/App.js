@@ -5,6 +5,7 @@ import LoginPage from './pages/authentication/LoginPage';
 import ForgetPasswordPage from './pages/authentication/ForgetPasswordPage';
 import OTPPage from './pages/authentication/OTPPage';
 import ResetPasswordPage from './pages/authentication/ResetPasswordPage';
+import VerticalOrgChartMobile from './Banner_Pages/MobileScreen/VerticalOrgChartMobile';
 // import Header from './Banner_Pages/components/header/Header';
 // import Community from './Banner_Pages/body/Community';
 // import Home from './Banner_Pages/body/Home';
@@ -39,8 +40,13 @@ function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/blogpage" element={<BlogPage />} />
           <Route path="/features" element={<Features />} /> */}
+          
 
           {/* -----   Banner_Pages      ----- */}
+
+          {/* Mobile screen */}
+
+          <Route path="/verticalorgchartmobile" element={<VerticalOrgChartMobile />} />
 
         </Routes>
 
