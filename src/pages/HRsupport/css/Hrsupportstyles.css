@@ -110,13 +110,32 @@
   
 /* Hrsupport-dashboard */
 
-.Hrsupport-dashboard{
+.Hrsupport-dashboard {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 32px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+  gap: 32px;
   max-width: 1035px;
   margin: 0 auto;
 }
+
+@media (max-width: 1024px) {
+  .Hrsupport-dashboard {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .Hrsupport-dashboard {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .Hrsupport-dashboard {
+      grid-template-columns: 1fr; /* 1 column for extra-small screens */
+  }
+}
+
 
 /* styles.css */
 .notification-badge {
@@ -148,4 +167,41 @@
   grid-gap: 32px;
   max-width: 1035px;
   margin: 0 auto;
+}
+
+
+.approval-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 5% 0 5%;
+  margin-bottom: 40px;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.approval-title {
+  font-weight: bold;
+  color: #00275c;
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .approval-container {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start;
+  }
+  
+  .button-group {
+      flex-direction: column; /* Stack buttons vertically */
+      width: 100%; /* Ensures full-width buttons */
+  }
+  .Hrsupport-dashboard{
+    padding: 20px;
+  }
 }

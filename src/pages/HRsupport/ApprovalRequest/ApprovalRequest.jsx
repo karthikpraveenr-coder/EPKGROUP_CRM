@@ -101,7 +101,7 @@ export default function ApprovalRequest() {
         setIsTimeOff(false);
     }
 
-   
+
     // ----------------------------------------------------------------------------------------------------\
 
 
@@ -279,7 +279,7 @@ export default function ApprovalRequest() {
     // Attendance shift
 
     const [isShift, setIsShift] = useState([{ "id": "0", "shift_slot": "Select Shift" }]);
-   // const [selectedshift, setSelectedshift] = useState('');
+    // const [selectedshift, setSelectedshift] = useState('');
 
 
     useEffect(() => {
@@ -461,9 +461,9 @@ export default function ApprovalRequest() {
             errors.reason = 'Reason is required.';
         }
 
-        if (noactiveshift !== 'General' ) {
+        if (noactiveshift !== 'General') {
             errors.noactiveshift = noactiveshift;
-          }
+        }
 
         if (Object.keys(errors).length > 0) {
             setFormErrors(errors);
@@ -523,7 +523,7 @@ export default function ApprovalRequest() {
         setSelectedMember('');
         setSelectedattendancetype('');
         setSelectedattendancelocation('');
-       // setSelectedshift('');
+        // setSelectedshift('');
         setFormData({
             ...formData,
             request_date: "",
@@ -609,7 +609,7 @@ export default function ApprovalRequest() {
         formDataToSend.append('request_totime', request_totimeUpdated);
         formDataToSend.append('request_type', selectedattendancetype);
         formDataToSend.append('request_location', selectedattendancelocation);
-       // formDataToSend.append('shiftslot_id', selectedshift);
+        // formDataToSend.append('shiftslot_id', selectedshift);
         formDataToSend.append('request_reason', formData.attendance_reason);
 
         try {
@@ -696,7 +696,7 @@ export default function ApprovalRequest() {
         setSelectedMember('');
         setSelectedoverTimetype('')
         setSelectedattendancelocation('')
-     //   setSelectedshift('')
+        //   setSelectedshift('')
         setFormDataOT({
             ...formDataOT,
             request_date: "",
@@ -886,16 +886,14 @@ export default function ApprovalRequest() {
         <div>
 
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', paddingRight: '5%', paddingLeft: '5%', paddingTop: '5%', marginBottom: '40px' }}>
-
-                <h3 style={{ fontWeight: 'bold', color: '#00275c' }}>Approval List</h3>
+            <div className="approval-container">
+                <h3 className="approval-title">Approval List</h3>
                 <>
-                    {userrole.includes('1') || userrole.includes('2') ?
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    {(userrole.includes('1') || userrole.includes('2')) && (
+                        <div className="button-group">
                             <Button onClick={openIsTimeOff}>
-                                Add Leave / Permission /Half day
+                                Add Leave / Permission / Half Day
                             </Button>
-
                             <Button onClick={handleopenAttendance}>
                                 Add Attendance
                             </Button>
@@ -903,11 +901,10 @@ export default function ApprovalRequest() {
                                 Add Overtime
                             </Button>
                         </div>
-
-
-                        : null}
+                    )}
                 </>
             </div>
+
 
 
             {/* ---------------------------------------------------------------------------------------------------- */}
@@ -986,7 +983,7 @@ export default function ApprovalRequest() {
                         </Form.Group>
 
 
-                       
+
 
                         {type == 2 || type == 3 ?
                             <div className='mb-2'>

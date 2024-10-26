@@ -295,7 +295,7 @@ display: none !important;
 
                     <h3 className='mb-5' style={{ fontWeight: 'bold', color: '#00275c' }}>Relieving Letter List</h3>
 
-                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between', flexWrap:'wrap', gap:'17px' }}>
                         <div>
                             <input
                                 type="text"

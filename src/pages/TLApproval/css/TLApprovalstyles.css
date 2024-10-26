@@ -116,6 +116,25 @@
   margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .TLApproval-dashboard {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .TLApproval-dashboard {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .TLApproval-dashboard {
+    padding: 20px;
+      grid-template-columns: 1fr; /* 1 column for extra-small screens */
+  }
+}
+
 /* styles.css */
 .notification-badge {
   position: relative;

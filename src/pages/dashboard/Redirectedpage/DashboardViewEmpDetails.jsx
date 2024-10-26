@@ -290,7 +290,7 @@ export default function DashboardViewEmpDetails() {
                 <div style={{ display: 'grid', maxWidth: '1035px', margin: '0 auto', paddingTop: '7vh' }}>
 
                     <h3 className="mb-5" style={{ fontWeight: 'bold', color: '#00275c' }}>Daily Attendance List - {statusvalue}</h3>
-                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between', flexWrap:'wrap', gap:'17px' }}>
                         <div>
                             <input
                                 type="text"

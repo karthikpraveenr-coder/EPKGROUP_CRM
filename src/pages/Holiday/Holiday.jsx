@@ -517,20 +517,21 @@ const Holiday = () => {
           {/* Add Holiday btn */}
           {(userrole.includes('1') || userrole.includes('2')) && (
             <>
-              <button
-                className="btn btn-info btn-sm mr-2"
-                style={{
-                  width: '19.5%',
-                  alignItems: 'left',
-                  backgroundColor: '#0d6efd',
-                  borderColor: '#0d6efd',
-                  color: 'white',
-                  marginRight: '10px', fontSize: '20px',
-                }}
-                onClick={handleAddHoliday}
-              >
-                + Add Holiday
-              </button>
+              <div>
+                <button
+                  className="btn btn-info btn-sm mr-2 w-30 w-md-100"
+                  style={{
+                    backgroundColor: '#0d6efd',
+                    borderColor: '#0d6efd',
+                    color: 'white',
+                    fontSize: '18px'
+                  }}
+                  onClick={handleAddHoliday}
+                >
+                  + Add Holiday
+                </button>
+              </div>
+
               <br></br>
             </>
           )}
@@ -677,7 +678,7 @@ const Holiday = () => {
 
           {/* --------------------------------------------------------------------------------------------------------------- */}
           {/* Table search and download */}
-          <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between', flexWrap: 'wrap', gap: '17px' }}>
             {/* Search */}
             <div>
               <input
@@ -703,7 +704,7 @@ const Holiday = () => {
           </div>
 
           {/* Table */}
-          <div ref={componentRef}>
+          <div ref={componentRef} style={{ overflowX: 'auto', width: '100%' }}>
             <table className="table">
               <thead className="thead-dark">
                 <tr>

@@ -285,8 +285,8 @@ function IndividualMonthlyList() {
                     {/* ------------------------------------------------------------------------------------------------ */}
                     {/* List table */}
 
-                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between' }}>
-                        <div>
+                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between', flexWrap:'wrap', gap:'17px' }}>
+                    <div style={{display:'flex', flexWrap:'wrap', gap:'10px'}}>
                             <input
                                 type="text"
                                 placeholder="Search..."

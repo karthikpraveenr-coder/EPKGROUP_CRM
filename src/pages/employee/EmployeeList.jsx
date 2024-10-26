@@ -133,7 +133,7 @@ export default function EmployeeList() {
 
 
                         <h3 style={{ paddingBottom: '20px', fontWeight: 'bold', color: '#00275c' }}>Employee List</h3>
-                        <span style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                        <span style={{ display: 'flex', justifyContent: 'space-between', width: '100%', flexWrap:'wrap' }}>
                             <div>
 
                                 <input

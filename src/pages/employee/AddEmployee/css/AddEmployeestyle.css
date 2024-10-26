@@ -1,60 +1,122 @@
-.addemployee__container{
-    padding: 20px 30px 0px 30px;   
+.addemployee__container {
+  padding: 20px 30px 0px 30px;
 }
-.form-label{
+
+.form-label {
   font-weight: 600;
 }
-.next{
+
+.next,
+.previous {
   font-weight: 500;
 }
-.next:hover{
+
+.next:hover {
   background-color: white;
   color: #0d6efd;
-  font-weight: 500;
   border-color: #0d6efd;
 }
-.previous{
+
+.previous {
   background-color: white;
   color: #0d6efd;
-  font-weight: 500;
   border-color: #0d6efd;
 }
-.previous:hover{
+
+.previous:hover {
   background-color: #0d6efd;
   color: white;
-  font-weight: 500;
   border-color: #0d6efd;
 }
 
+/* Navbar styles */
+.steps {
+  display: flex;
+  /* justify-content: center; */
+  align-items: flex-start;
+  margin: 20px 0;
+}
 
-/* nav bar styles */
+.navimg {
+  width: 60%;
+}
 
-   .steps{
-    display: flex;
-    
-   }
+/* Z-index adjustments and overlap styling */
+.z-index1 {
+  z-index: 10;
+  margin-right: -150px;
+}
 
-   .navimg{
-    width: 60%;
-   }
-   .z-index1{
-    z-index: 10;
-    margin-right: -150px;
-   }
-   .z-index2{
-    z-index: 9;
-    margin-right: -180px;
-   }
-   .z-index3{
-    z-index: 8;
-    margin-right: -190px;
-   }
-   .z-index4{
-    z-index: 7;
-    margin-right: -190px;
-   }
-   .z-index5{
-    z-index: 6;
-    margin-right: -150px;
-   }
-   
+.z-index2 {
+  z-index: 9;
+  margin-right: -180px;
+}
+
+.z-index3 {
+  z-index: 8;
+  margin-right: -190px;
+}
+
+.z-index4 {
+  z-index: 7;
+  margin-right: -190px;
+}
+
+.z-index5 {
+  z-index: 6;
+  margin-right: -150px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .step {
+    margin: 10px 0;
+  }
+
+  .navimg {
+    width: 80%;
+  }
+
+  .z-index1,
+  .z-index2,
+  .z-index3,
+  .z-index4,
+  .z-index5 {
+    margin-right: 0;
+  }
+
+  .addemployee__container {
+    padding: 20px 10px 0px 5px;
+  }
+
+  .basic__details__container {
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 43%);
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navimg {
+    width: 70%;
+  }
+
+  .next,
+  .previous {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .addemployee__container {
+    padding: 20px 10px 0px 5px;
+  }
+
+  .basic__details__container {
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 43%);
+    padding: 30px 15px;
+  }
+}
