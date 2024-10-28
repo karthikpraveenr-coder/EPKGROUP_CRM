@@ -13,6 +13,7 @@ import axios from 'axios';
 import { useReactToPrint } from 'react-to-print';
 
 
+
 Font.register({
     family: 'Oswald',
     src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf'
@@ -301,7 +302,7 @@ const AppointmentLetterView = (dummy_images) => {
                                     us, we are pleased to confirm your Appointment as <Text style={styles.bold}>{relievingletter.appoinData?.designation}</Text> at our organization from <Text style={styles.bold}>{formatDate(relievingletter.appoinData?.start_date)}</Text>
                                 </Text>
                                 <Text style={styles.line__height}>
-                                    You will be entitled to annual CTC of Rs. <Text style={styles.bold}>Annual CTC</Text>(Rupees <Text style={styles.bold}>({relievingletter.appoinData?.converted_annual_salary_text})</Text> only)
+                                    You will be entitled to <Text style={styles.bold}>Annual CTC</Text> of Rupees <Text style={styles.bold}>{relievingletter.appoinData?.converted_annual_salary_text}</Text> only
                                 </Text>
                                 <Text style={styles.on_the_day_joining}>
                                     On the day of joining, you have submitted the photocopy of the following:
@@ -313,13 +314,13 @@ const AppointmentLetterView = (dummy_images) => {
                                 {'\n'}  <Text style={styles.on_the_day_joining}>4. Relieving Letter from Previous Employer (if applicable)</Text>
 
                                 <Text style={styles.line__height}>
-                                    You will be under probation for a period of <Text style={styles.bold}>{relievingletter.appoinData?.noties_period_text} {relievingletter.appoinData?.noties_period_text > '1' ? 'days' : 'day'}</Text>, during which your performance will be
+                                    You will be under probation for a period of <Text style={styles.bold}>{relievingletter.appoinData?.probation_period}</Text>, during which your performance will be
                                     assessed. Your confirmation of service will depend on the performance during the probation period.
                                 </Text>
 
                                 <Text style={styles.line__height}>
-                                    The management has the right to terminate the employment at any point of time by giving a {relievingletter.appoinData?.noties_period_text} {relievingletter.appoinData?.noties_period_text > '1' ? 'days' : 'day'} notice or a {relievingletter.appoinData?.noties_period_text} {relievingletter.appoinData?.noties_period_text > '1' ? 'days' : 'day'} salary in lieu of the notice. Similarly, if any employee wishes to resign
-                                    should serve a {relievingletter.appoinData?.noties_period_text} {relievingletter.appoinData?.noties_period_text > '1' ? 'days' : 'day'} notice or a {relievingletter.appoinData?.noties_period_text} {relievingletter.appoinData?.noties_period_text > '1' ? 'days' : 'day'} salary in lieu of the notice. In the case of termination due
+                                    The management has the right to terminate the employment at any point of time by giving a {relievingletter.appoinData?.noties_period_text} notice or a {relievingletter.appoinData?.noties_period_text} salary in lieu of the notice. Similarly, if any employee wishes to resign
+                                    should serve a {relievingletter.appoinData?.noties_period_text} notice or a {relievingletter.appoinData?.noties_period_text} salary in lieu of the notice. In the case of termination due
                                     to any mal practice or violation of agreement terms, the company reserves the right to terminate
                                     the employment without notice and claim compensation.
                                 </Text>

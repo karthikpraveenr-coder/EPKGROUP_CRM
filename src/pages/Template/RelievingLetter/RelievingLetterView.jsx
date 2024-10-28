@@ -252,19 +252,18 @@ const RelievingLetter = () => {
                                     style={styles.image} fixed
                                     src={`https://epkgroup.in/crm/api/storage/app/${relievingletter.headerFooterData?.header_layout}`}
                                     // src={'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg'}
-
                                />
 
                                 <Text style={styles.head_date}>Date : {formatDate(relievingletter.reliveData?.date)}</Text>
                                 <Text style={styles.title}>RELIEVING CUM EXPERIENCE LETTER</Text>
 
                                 <Text style={styles.start_date}>
-                                 This to certify that <Text style={styles.bold}>{relievingletter.reliveData?.salutation} {relievingletter.reliveData?.employee_name}</Text> was associated with our organization from <Text style={styles.bold}>{formatDate(relievingletter.reliveData?.joining_date)}</Text> to <Text style={styles.bold}>{formatDate(relievingletter.reliveData?.last_working_day)}</Text> with an annual package of <Text style={styles.bold}>{relievingletter.reliveData?.converted_annual_salary_number} ({relievingletter.reliveData?.converted_annual_salary_text})</Text> and the last designation held by her/him during the time of relieving was that of <Text style={styles.bold}>{relievingletter.reliveData?.designation}</Text>.</Text>
-                                 <Text style={styles.line__height}> During his/her tenure with us for the above period, we found him/her efficient, his/her
+                                 This to certify that <Text style={styles.bold}>{relievingletter.reliveData?.salutation} {relievingletter.reliveData?.employee_name}</Text> was associated with our organization from <Text style={styles.bold}>{formatDate(relievingletter.reliveData?.joining_date)}</Text> to <Text style={styles.bold}>{formatDate(relievingletter.reliveData?.last_working_day)}</Text> with an annual package of Rs.<Text style={styles.bold}>{relievingletter.reliveData?.converted_annual_salary_number} (Rupees {relievingletter.reliveData?.converted_annual_salary_text})</Text> and the last designation held by her/him during the time of relieving was that of <Text style={styles.bold}>{relievingletter.reliveData?.designation}</Text>.</Text>
+                                 <Text style={styles.line__height}>During his/her tenure with us for the above period, we found him/her efficient, his/her
                                  character and conduct were good.</Text>
                                  <Text style={styles.line__height}>We wish him/her the best in his/her future endeavor.</Text>
                               
-                                 <Text style={styles.for_company}>For (Company Name),</Text>
+                                 <Text style={styles.for_company}>For {relievingletter.reliveData?.company_name},</Text>
 
                                  <Text style={styles.for_hr_depart}>HR DEPARTMENT</Text>
                                  

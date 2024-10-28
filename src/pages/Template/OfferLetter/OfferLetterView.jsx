@@ -10,6 +10,8 @@ import { useReactToPrint } from 'react-to-print';
 import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import ReactDOM from 'react-dom';
 import { PDFViewer } from '@react-pdf/renderer';
+import { format } from 'date-fns';
+
 
 const AppointmentLetterView = () => {
 
@@ -66,6 +68,14 @@ const AppointmentLetterView = () => {
         family: 'Oswald',
         src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf'
     });
+
+    function formatApiDate(apiResponseDate) {
+        // Create a new Date object from the API response
+        const date = new Date(apiResponseDate);
+    
+        // Format the date to DD-MM-YYYY
+        return format(date, 'dd-MM-yyyy');
+    }
 
     const styles = StyleSheet.create({
         body: {
@@ -263,7 +273,7 @@ const AppointmentLetterView = () => {
 
                                     />
 
-                                    <Text style={styles.title}>EMPLOYEE APPOINTMENT LETTER</Text>
+                                    <Text style={styles.title}>EMPLOYEE OFFER LETTER</Text>
                                     <Text style={styles.head_date}> {formatDate(relievingletter.offerData?.date)}</Text>
 
                                     {'\n'}<Text style={styles.on_the_day_joining}>{relievingletter.offerData?.name}</Text>
@@ -278,15 +288,15 @@ const AppointmentLetterView = () => {
                                     </Text> */}
                                     <Text style={styles.line__height}>
                                         You will be entitled to an annual cost to company (CTC) of <Text style={styles.bold}>Rs. {relievingletter.offerData?.annual_ctc}</Text>.
-                                        Your working hours will be from <Text style={styles.bold}>{relievingletter.offerData?.working_hrs_from ? relievingletter.offerData.working_hrs_from : ''} AM to {relievingletter.offerData?.working_hrs_to ? relievingletter.offerData.working_hrs_to : ''} PM</Text> on <Text style={styles.bold}>{relievingletter.offerData?.working_day ? relievingletter.offerData.working_day : ''}</Text>.
+                                        Your working hours will be from <Text style={styles.bold}>{relievingletter.offerData?.working_hrs_from ? relievingletter.offerData.working_hrs_from : ''} to {relievingletter.offerData?.working_hrs_to ? relievingletter.offerData.working_hrs_to : ''}</Text> for <Text style={styles.bold}>{relievingletter.offerData?.working_day ? relievingletter.offerData.working_day : ''} {relievingletter.offerData?.working_day > 1 ? 'days' : 'day'}</Text>.
                                     </Text>
 
                                     <Text style={styles.line__height}>
-                                        You will be on probation for a period of <Text style={styles.bold}>{relievingletter.offerData?.probation_period ? relievingletter.offerData.probation_period : ''} {relievingletter.offerData?.probation_period > 1 ? 'days' : 'day'}</Text>.
+                                        You will be on probation for a period of <Text style={styles.bold}>{relievingletter.offerData?.probation_period ? relievingletter.offerData.probation_period : ''}</Text>.
                                     </Text>
 
                                     <Text style={styles.line__height}>
-                                        Upon acceptance of the terms and conditions as outlined in this offer letter, either you or the Company may terminate your employment by providing <Text style={styles.bold}>{relievingletter.offerData?.noties_period ? relievingletter.offerData.noties_period : ''} {relievingletter.offerData?.noties_period > 1 ? 'days' : 'day'} notice</Text>.
+                                        Upon acceptance of the terms and conditions as outlined in this offer letter, either you or the Company may terminate your employment by providing <Text style={styles.bold}>{relievingletter.offerData?.noties_period ? relievingletter.offerData.noties_period : ''} notice</Text>.
                                     </Text>
 
                                     <Text style={styles.line__height}>
@@ -300,12 +310,12 @@ const AppointmentLetterView = () => {
                                     ))}
 
                                     <Text style={styles.line__height}>
-                                        We would like you to begin work on <Text style={styles.bold}>{relievingletter.offerData.date ? relievingletter.offerData.date : ''}</Text> and report to <Text style={styles.bold}>{relievingletter.offerData.supervisor_name ? relievingletter.offerData.supervisor_name : ''}</Text>.
+                                        We would like you to begin work on <Text style={styles.bold}>{relievingletter.offerData.date ?formatApiDate(relievingletter.offerData.date) : ''}</Text> and report to <Text style={styles.bold}>{relievingletter.offerData.supervisor_name ? relievingletter.offerData.supervisor_name : ''}</Text>.
                                     </Text>
 
                                     <Text style={styles.line__height}>
                                         To accept this offer please sign the enclosed copy of this letter and return it
-                                        via email by <Text style={styles.bold}>{relievingletter.offerData.last_date_offer ? relievingletter.offerData.last_date_offer : ''}</Text> to confirm your acceptance.
+                                        via email by <Text style={styles.bold}>{relievingletter.offerData.last_date_offer ? formatApiDate(relievingletter.offerData.last_date_offer) : ''}</Text> to confirm your acceptance.
                                     </Text>
 
                                     <Text style={styles.line__height}>

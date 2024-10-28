@@ -8,9 +8,10 @@ const EmployeeRole = ({ formData, handleChange, prevStep, formErrors, nextStep }
 
     // const userRoleOptions = formData.userRole.data || [];
     const userRoleOptions = (formData.userRole && formData.userRole.data) || [];
-    const usersupervisorRoleOptions = formData.usersupervisorRole.data || [];
+    const usersupervisorRoleOptions = (formData.usersupervisorRole && formData.usersupervisorRole.data) || [];
+    // const usersupervisorRoleOptions = formData.usersupervisorRole.data || [];
 
-    console.log(usersupervisorRoleOptions);
+    console.log("usersupervisorRoleOptions--------------->090909099", usersupervisorRoleOptions);
    
     return (
         <div>
@@ -101,6 +102,7 @@ const EmployeeRole = ({ formData, handleChange, prevStep, formErrors, nextStep }
                                     name="selectedSupervisorRoleId" // Assuming you've added this field to your state
                                     value={formData.selectedSupervisorRoleId || ''} // Ensures a controlled component
                                     onChange={handleChange} // Make sure handleChange updates selectedRoleId correctly
+                                    
                                 >
                                     <option value="">Select Supervisor Role</option>
                                     {usersupervisorRoleOptions.map(option => (

@@ -320,15 +320,17 @@ function MonthlyList() {
                     {/* ------------------------------------------------------------------------------------------------ */}
                     {/* List table */}
 
-                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between', flexWrap:'wrap', gap:'17px' }}>
-                    <div style={{display:'flex', flexWrap:'wrap', gap:'10px'}}>
-                            <input
-                                type="text"
-                                placeholder="Search..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                style={myStyles1}
-                            />
+                    <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '10px', justifyContent: 'space-between', flexWrap: 'wrap', gap: '17px' }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                            {['1', '2'].includes(userrole) &&
+                                <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    style={myStyles1}
+                                />
+                            }
                             <input
                                 type="month"
                                 style={myStyles1}
