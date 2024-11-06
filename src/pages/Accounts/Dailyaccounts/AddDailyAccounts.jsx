@@ -15,7 +15,6 @@ import { ScaleLoader } from 'react-spinners';
 
 
 function AddDailyAccounts() {
-    // this is karthikpraveen
     // ------------------------------------------------------------------------------------------------
     // Redirect to the edit page
     const navigate = useNavigate();
